@@ -126,7 +126,7 @@ Residential proxies are ideal for reliable data scraping because they’re indis
                 Privacy Protected
               </h3>
               <p className="max-w-md text-center text-grayishBlue md:text-left">
-              No business wants its employees to access inappropriate content via the company network. When using a proxy, a network administrator can easily control which devices can access the internet and even which web locations are available to employees. Our solutions enable you to block any undesirable content and websites, so you don't have to worry about employees wasting time..
+              No business wants its employees to access inappropriate content via the company network. When using a proxy, a network administrator can easily control which devices can access the internet and even which web locations are available to employees. Our solutions enable you to block any undesirable content and websites, so you don&apos;t have to worry about employees wasting time..
               </p>
               <div className="mx-auto md:mx-0">
                 <a

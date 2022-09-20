@@ -11,7 +11,7 @@ export default function Home() {
     <Layout>
       {/* <!-- Hero Section --> */}
     <section id="hero">
-      {/* <!-- Container For Image & Content --> */}
+      {/* <!-- Container For Image and Content --> */}
       <div
         className="container flex flex-col-reverse mx-auto p-6 lg:flex-row lg:mb-0"
       >
@@ -20,12 +20,12 @@ export default function Home() {
           <h1
             className="text-3xl font-semibold text-center lg:text-6xl lg:text-left"
           >
-            Proxy Selling - Redefined!
+            Welcome to Proxify
           </h1>
           <p
             className="max-w-md mx-auto text-lg text-justify text-gray-400 lg:text-2xl lg:text-left lg:mt-0 lg:mx-0"
           >
-            Our proxy network consists of real IP addresses from real users, making sure you never get detected or blocked. There's no sharing of any kind, so your proxy is available only to you
+            Our proxy network consists of real IP addresses from real users, making sure you never get detected or blocked. There&apos;s no sharing of any kind, so your proxy is available only to you
           </p>
 
           {/* <!-- Buttons Container --> */}
@@ -93,7 +93,7 @@ export default function Home() {
         <form
           className="flex flex-col items-start justify-center max-w-2xl mx-auto space-y-6 text-base px-6 md:flex-row md:space-y-0 md:space-x-4 md:px-0"
         >
-          {/* <!-- Input & Button Container --> */}
+          {/* <!-- Input and Button Container --> */}
           <div
             className="flex flex-col justify-between items-center mx-auto md:flex-row md:mx-0"
           >
