@@ -20,7 +20,7 @@ export default function Home() {
           <h1
             className="text-3xl font-semibold text-center lg:text-6xl lg:text-left"
           >
-            Proxy Selling - Redefined!
+            Welcome to Proxify
           </h1>
           <p
             className="max-w-md mx-auto text-lg text-justify text-gray-400 lg:text-2xl lg:text-left lg:mt-0 lg:mx-0"
