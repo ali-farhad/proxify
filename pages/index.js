@@ -11,7 +11,7 @@ export default function Home() {
     <Layout>
       {/* <!-- Hero Section --> */}
     <section id="hero">
-      {/* <!-- Container For Image & Content --> */}
+      {/* <!-- Container For Image and Content --> */}
       <div
         className="container flex flex-col-reverse mx-auto p-6 lg:flex-row lg:mb-0"
       >
@@ -93,7 +93,7 @@ export default function Home() {
         <form
           className="flex flex-col items-start justify-center max-w-2xl mx-auto space-y-6 text-base px-6 md:flex-row md:space-y-0 md:space-x-4 md:px-0"
         >
-          {/* <!-- Input & Button Container --> */}
+          {/* <!-- Input and Button Container --> */}
           <div
             className="flex flex-col justify-between items-center mx-auto md:flex-row md:mx-0"
           >

@@ -115,7 +115,7 @@ function Pricing() {
                     </svg>
                 </div>
                 <p className="ml-3 text-base leading-6 text-gray-700 dark:text-gray-200">
-                Unlimited bandwidth & threads
+                Unlimited bandwidth and threads
                 </p>
             </li>
             <li className="mt-4 flex items-start">
@@ -166,7 +166,7 @@ function Pricing() {
                     </svg>
                 </div>
                 <p className="ml-3 text-base leading-6 text-gray-700 dark:text-gray-200">
-                Unlimited Bandwidth & threads
+                Unlimited Bandwidth and threads
                 </p>
             </li>
             <li className="mt-4 flex items-start">
