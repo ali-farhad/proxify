@@ -23,9 +23,9 @@ function Layout({title, keywords, description, children}) {
 }
 
 Layout.defaultProps = {
-    title:'Proxify - Find the best proxy deals',
-    description: 'Proxify is a proxy marketplace where you can find the best proxy deals',
-    keywords: 'Proxify is one of the best and cheapest proxy service provider with 2M+ residential proxies and many other proxy types☑️! Start using it NOW!'
+    title:'Sockit2me - Find the best proxy deals',
+    description: 'Sockit2me is a proxy marketplace where you can find the best proxy deals',
+    keywords: 'Sockit2me is one of the best and cheapest proxy service provider with 2M+ residential proxies and many other proxy types☑️! Start using it NOW!'
 
 }
 

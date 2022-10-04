@@ -1,21 +1,22 @@
 
-function Pricing() {
+function Pricing({plans}) {
+    const {basicPrice, proPrice, ultimatePrice, basic_quantity, pro_quantity, ultimate_quantity} = plans
   return (
     <div id="pricing">
         {/* // <!-- Download Heading --> */}
 
 
 {/* // <!-- Download Boxes --> */}
-<section id="download-boxes" classNameName="py-32">
+<section id="download-boxes" className="py-32">
   {/* <!-- Boxes Container --> */}
   <div
-    classNameName="relative flex flex-col items-center max-w-5xl mx-auto space-y-10 px-10 md:px-6 md:space-y-0 md:space-x-7 md:flex-row"
+    className="relative flex flex-col items-center justify-center mx-auto space-y-10 px-10 md:px-6 md:space-y-0 md:space-x-7 md:flex-row"
   >
     {/* <!-- Box 1 --> */}
-<div className="flex flex-col md:flex-row items-center justify-center space-x-10 ">
+<div className="w-fit flex flex-col md:flex-row items-stretch mx-auto justify-stretch md:space-x-10 ">
 
-<div className="rounded-lg shadow-lg overflow-hidden mb-4">
-    <div className="px-6 py-8 bg-white dark:bg-gray-800 sm:p-10 sm:pb-6">
+<div className="rounded-lg shadow-lg overflow-hidden mb-4 w-full">
+    <div className="px-6 py-8 bg-white dark:bg-gray-800 sm:p-4 sm:pb-6">
         <div className="flex justify-center">
             <span className="inline-flex px-4 py-1 dark:text-white rounded-full text-sm leading-5 font-semibold tracking-wide uppercase">
                 Starter Plan
@@ -25,9 +26,9 @@ function Pricing() {
             <span className="ml-1 mr-3 text-xl leading-8 font-medium text-gray-500 dark:text-gray-400">
                 from
             </span>
-            $10
+            ${basicPrice}
             <span className="ml-1 pt-8 text-2xl leading-8 font-medium text-gray-500 dark:text-gray-400">
-                /month
+                /{basic_quantity} proxies
             </span>
         </div>
     </div>
@@ -36,7 +37,7 @@ function Pricing() {
             <li className="mt-4 flex items-start">
                 <div className="flex-shrink-0">
                     <svg className="h-6 w-6 text-green-500" stroke="currentColor" fill="none" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7">
                         </path>
                     </svg>
                 </div>
@@ -47,7 +48,7 @@ function Pricing() {
             <li className="mt-4 flex items-start">
                 <div className="flex-shrink-0">
                     <svg className="h-6 w-6 text-green-500" stroke="currentColor" fill="none" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7">
                         </path>
                     </svg>
                 </div>
@@ -58,7 +59,7 @@ function Pricing() {
             <li className="mt-4 flex items-start">
                 <div className="flex-shrink-0">
                     <svg className="h-6 w-6 text-green-500" stroke="currentColor" fill="none" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7">
                         </path>
                     </svg>
                 </div>
@@ -77,20 +78,20 @@ function Pricing() {
 
 
     {/* <!-- Box 2 --> */}
-    <div className="rounded-lg shadow-lg overflow-hidden mb-4">
+    <div className="rounded-lg shadow-lg overflow-hidden mb-4 w-full">
     <div className="px-6 py-8 bg-white dark:bg-gray-800 sm:p-10 sm:pb-6">
         <div className="flex justify-center">
             <span className="inline-flex px-4 py-1 dark:text-white rounded-full text-sm leading-5 font-semibold tracking-wide uppercase">
-                Mid Plan
+                Pro Plan
             </span>
         </div>
         <div className="mt-4 flex justify-center text-6xl leading-none font-extrabold dark:text-white">
             <span className="ml-1 mr-3 text-xl leading-8 font-medium text-gray-500 dark:text-gray-400">
                 from
             </span>
-            $50
+            ${proPrice}
             <span className="ml-1 pt-8 text-2xl leading-8 font-medium text-gray-500 dark:text-gray-400">
-                /month
+                /{pro_quantity} Proxies
             </span>
         </div>
     </div>
@@ -99,7 +100,7 @@ function Pricing() {
             <li className="mt-4 flex items-start">
                 <div className="flex-shrink-0">
                     <svg className="h-6 w-6 text-green-500" stroke="currentColor" fill="none" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7">
                         </path>
                     </svg>
                 </div>
@@ -110,7 +111,7 @@ function Pricing() {
             <li className="mt-4 flex items-start">
                 <div className="flex-shrink-0">
                     <svg className="h-6 w-6 text-green-500" stroke="currentColor" fill="none" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7">
                         </path>
                     </svg>
                 </div>
@@ -121,7 +122,7 @@ function Pricing() {
             <li className="mt-4 flex items-start">
                 <div className="flex-shrink-0">
                     <svg className="h-6 w-6 text-green-500" stroke="currentColor" fill="none" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7">
                         </path>
                     </svg>
                 </div>
@@ -139,20 +140,20 @@ function Pricing() {
 </div>
 
     {/* <!-- Box 3 --> */}
-    <div className="rounded-lg shadow-lg overflow-hidden mb-4">
+    <div className="rounded-lg shadow-lg overflow-hidden mb-4 w-full">
     <div className="px-6 py-8 bg-white dark:bg-gray-800 sm:p-10 sm:pb-6">
         <div className="flex justify-center">
             <span className="inline-flex px-4 py-1 dark:text-white rounded-full text-sm leading-5 font-semibold tracking-wide uppercase">
-                Pro Plan
+                Ultimate Plan
             </span>
         </div>
         <div className="mt-4 flex justify-center text-6xl leading-none font-extrabold dark:text-white">
             <span className="ml-1 mr-3 text-xl leading-8 font-medium text-gray-500 dark:text-gray-400">
                 from
             </span>
-            $100
+            ${ultimatePrice}
             <span className="ml-1 pt-8 text-2xl leading-8 font-medium text-gray-500 dark:text-gray-400">
-                /month
+                /{ultimate_quantity} Proxies
             </span>
         </div>
     </div>
@@ -161,7 +162,7 @@ function Pricing() {
             <li className="mt-4 flex items-start">
                 <div className="flex-shrink-0">
                     <svg className="h-6 w-6 text-green-500" stroke="currentColor" fill="none" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7">
                         </path>
                     </svg>
                 </div>
@@ -172,7 +173,7 @@ function Pricing() {
             <li className="mt-4 flex items-start">
                 <div className="flex-shrink-0">
                     <svg className="h-6 w-6 text-green-500" stroke="currentColor" fill="none" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7">
                         </path>
                     </svg>
                 </div>
@@ -183,7 +184,7 @@ function Pricing() {
             <li className="mt-4 flex items-start">
                 <div className="flex-shrink-0">
                     <svg className="h-6 w-6 text-green-500" stroke="currentColor" fill="none" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7">
                         </path>
                     </svg>
                 </div>

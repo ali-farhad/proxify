@@ -1,6 +1,15 @@
-
+import { useContext, useEffect } from "react";
+import Link from "next/link";
 import { GiArrowsShield } from "react-icons/gi";
+import AuthContext from "../context/AuthContext";
+
+
+
 function Navbar() {
+  const { user, logout} = useContext(AuthContext)
+ 
+  
+
   return (
     <div>
         <nav className="container relative mx-auto p-6">
@@ -9,7 +18,7 @@ function Navbar() {
         {/* <!-- Logo --> */}
         <div className="z-30 flex items-center justify-between space-x-4">
           {/* <img src="images/logo-bookmark.svg" id="logo" /> */}
-          <span className="text-3xl text-softBlue"><GiArrowsShield/></span> <span className="font-bold text-1xl uppercase tracking-wider">Proxify</span>
+          <span className="text-3xl text-softBlue"><GiArrowsShield/></span> <span className="font-bold text-1xl uppercase tracking-wider">Sockit2me</span>
         </div>
 
         {/* <!-- Menu Items --> */}
@@ -24,11 +33,22 @@ function Navbar() {
           >
           {/* <a href="#faq" className="tracking-widest hover:text-softRed">FAQ</a> */}
 
-          <a
-            href="#"
-            className="px-8 py-2 text-white bg-softRed border-2 border-softRed rounded-lg shadow-md hover:text-softRed hover:bg-white"
-            >Login</a
-          >
+            {user ? 
+            
+            (
+            <Link href="/users/dashboard">
+            <a className="px-8 py-2 text-white bg-softRed border-2 border-softRed rounded-lg shadow-md hover:text-softRed hover:bg-white">Dashboard</a>
+            </Link>) 
+             :   
+             (
+              <Link href="/users/login">
+             <a className="px-8 py-2 text-white bg-softRed border-2 border-softRed rounded-lg shadow-md hover:text-softRed hover:bg-white">Login</a>
+             </Link>
+             
+            )}
+
+             
+         
         </div>
         {/* <!-- Hamburger Button --> */}
         <button

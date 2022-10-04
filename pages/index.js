@@ -3,7 +3,11 @@ import Layout from '../components/Layout'
 import Features from './../components/Features';
 import Pricing from './../components/Pricing';
 
-export default function Home() {
+
+import { API_URL } from '../config';
+
+export default function Home({plans}) {
+
   return (
     <div className="overflow-x-hidden">
     <Script src="ui.js" />
@@ -20,7 +24,7 @@ export default function Home() {
           <h1
             className="text-3xl font-semibold text-center lg:text-6xl lg:text-left"
           >
-            Welcome to Proxify
+            Welcome to Sockit2me
           </h1>
           <p
             className="max-w-md mx-auto text-lg text-justify text-gray-400 lg:text-2xl lg:text-left lg:mt-0 lg:mx-0"
@@ -62,7 +66,7 @@ export default function Home() {
       <div className="container mx-auto mt-16 px-6">
         <h2 className="mb-6 text-4xl font-semibold text-center">Features</h2>
         <p className="max-w-md mx-auto text-center text-grayishBlue">
-        The world of IP networking can be confusing and intimidating. With so many options to choose from, you need a reliable and trustworthy service, with an excellent reputation. At Proxify, we aim to provide a sustainable and predictable solution tailored to your specific IP address business needs. Our solutions are cost-effective, reliable, and easy-to-use, giving you a first-rate experience that grows along with you.
+        The world of IP networking can be confusing and intimidating. With so many options to choose from, you need a reliable and trustworthy service, with an excellent reputation. At Sockit2me, we aim to provide a sustainable and predictable solution tailored to your specific IP address business needs. Our solutions are cost-effective, reliable, and easy-to-use, giving you a first-rate experience that grows along with you.
 
 
         </p>
@@ -72,7 +76,7 @@ export default function Home() {
     {/* Features Component */}
     <Features/>
     {/* Pricing Component */}
-    <Pricing/>
+    <Pricing plans={plans}/>
 
     {/* <!-- Newsletter Section --> */}
     <section id="newsletter" className="bg-softBlue mt-20">
@@ -118,4 +122,17 @@ export default function Home() {
       </Layout>
       </div>
   )
+}
+
+
+export async function getServerSideProps({req}) { 
+  const resPlans = await fetch(`${API_URL}/api/plan`)
+  const plans = await resPlans.json()
+
+  return {
+    props: {
+      plans: plans.data.attributes,
+  }
+}
+
 }
