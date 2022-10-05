@@ -51,7 +51,9 @@ function Login() {
         />
   
         <div className="hidden lg:block lg:relative lg:p-12">
-          <a className="block text-white" href="/">
+
+          <Link href="/">
+          <a className="block text-white">
             <span className="sr-only">Home</span>
             <svg
               className="h-8 sm:h-10"
@@ -65,6 +67,7 @@ function Login() {
               />
             </svg>
           </a>
+          </Link>
   
           <h1 className="mt-6 text-2xl font-bold text-white sm:text-3xl md:text-4xl">
             Welcome to Sockit2me 🦑
@@ -81,10 +84,12 @@ function Login() {
       >
         <div className="max-w-xl lg:max-w-3xl">
           <div className="relative block -mt-16 lg:hidden">
+            <Link href="/">
             <a
               className="inline-flex items-center justify-center w-16 h-16 text-blue-600 bg-white rounded-full sm:w-20 sm:h-20"
-              href="/"
+              
             >
+             
               <span className="sr-only">Home</span>
               <svg
                 className="h-8 sm:h-10"
@@ -98,6 +103,7 @@ function Login() {
                 />
               </svg>
             </a>
+            </Link>
   
             <h1
               className="mt-2 text-2xl font-bold text-gray-900 sm:text-3xl md:text-4xl"
@@ -157,7 +163,7 @@ function Login() {
                 className="inline-block px-12 py-3 text-lg font-large text-white bg-softBlue border border-blue-600 rounded-md shrink-0 hover:bg-transparent hover:text-blue-600 focus:outline-none focus:ring active:text-blue-500"
               />
               <p className="mt-4 text-sm text-gray-500 sm:mt-0">
-                Don't have existing account?
+                Do not have existing account?
                 <Link href="/users/register">
                 <a className="text-gray-700 underline">{`  Register` }</a>
                 </Link>

@@ -50,7 +50,8 @@ function Register() {
       />
 
       <div className="hidden lg:block lg:relative lg:p-12">
-        <a className="block text-white" href="/">
+        <Link  href="/">
+        <a className="block text-white">
           <span className="sr-only">Home</span>
           <svg
             className="h-8 sm:h-10"
@@ -64,6 +65,7 @@ function Register() {
             />
           </svg>
         </a>
+        </Link>
 
         <h1  className="mt-6 text-2xl font-bold text-white sm:text-3xl md:text-4xl">
           Welcome to Sockit2me 🦑
@@ -80,9 +82,10 @@ function Register() {
     >
       <div className="max-w-xl lg:max-w-3xl">
         <div className="relative block -mt-16 lg:hidden">
+        <Link  href="/">
           <a
             className="inline-flex items-center justify-center w-16 h-16 text-blue-600 bg-white rounded-full sm:w-20 sm:h-20"
-            href="/"
+           
           >
             <span className="sr-only">Home</span>
             <svg
@@ -97,6 +100,7 @@ function Register() {
               />
             </svg>
           </a>
+          </Link>
 
           <h1
             className="mt-2 text-2xl font-bold text-gray-900 sm:text-3xl md:text-4xl"
@@ -185,14 +189,7 @@ function Register() {
          
 
           <div className="col-span-6">
-            <p className="text-sm text-gray-500">
-              {'By creating an account, you agree to our  '} 
-              <a href="#" className="text-gray-700 underline">
-                terms and conditions
-              </a>
-              {' and '}
-              <a href="#" className="text-gray-700 underline">privacy policy</a>.
-            </p>
+            
           </div>
 
           <div className="col-span-6 sm:flex sm:items-center sm:gap-4">
