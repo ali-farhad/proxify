@@ -14,14 +14,15 @@ module.exports = [
       },
     },
   },
-  {
-    name: 'strapi::cors',
-    config: {
-      enabled: true,
-      headers: '*',
-      origin: ['http://localhost:1337', 'http://localhost:3000']
-    }
-  },
+  // {
+  //   name: 'strapi::cors',
+  //   config: {
+  //     enabled: false,
+  //     headers: '*',
+  //     origin: ['http://localhost:1337', 'http://localhost:3000', 'https://proxify-strapi123.herokuapp.com']
+  //   }
+  // },
+  'strapi::cors',
   'strapi::poweredBy',
   'strapi::logger',
   'strapi::query',
