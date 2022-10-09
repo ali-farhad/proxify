@@ -1,5 +1,10 @@
+import {useRouter} from 'next/router';
+import Link from 'next/link'
+
 
 function Pricing({plans}) {
+    const router = useRouter()
+
     const {basicPrice, proPrice, ultimatePrice, basic_quantity, pro_quantity, ultimate_quantity} = plans
   return (
     <div id="pricing">
@@ -7,7 +12,7 @@ function Pricing({plans}) {
 
 
 {/* // <!-- Download Boxes --> */}
-<section id="download-boxes" className="py-32">
+<section id="download-boxes" className="">
   {/* <!-- Boxes Container --> */}
   <div
     className="relative flex flex-col items-center justify-center mx-auto space-y-10 px-10 md:px-6 md:space-y-0 md:space-x-7 md:flex-row"
@@ -15,11 +20,11 @@ function Pricing({plans}) {
     {/* <!-- Box 1 --> */}
 <div className="w-fit flex flex-col md:flex-row items-stretch mx-auto justify-stretch md:space-x-10 ">
 
-<div className="rounded-lg shadow-lg overflow-hidden mb-4 w-full">
-    <div className="px-6 py-8 bg-white dark:bg-gray-800 sm:p-4 sm:pb-6">
+<div className="rounded-lg shadow-lg overflow-hidden mb-2 w-full">
+    <div className="px-6 py-4 bg-white dark:bg-gray-800 sm:p-4 sm:pb-6">
         <div className="flex justify-center">
             <span className="inline-flex px-4 py-1 dark:text-white rounded-full text-sm leading-5 font-semibold tracking-wide uppercase">
-                Starter Plan
+                Discounted Plan
             </span>
         </div>
         <div className="mt-4 flex justify-center text-6xl leading-none font-extrabold dark:text-white">
@@ -28,7 +33,8 @@ function Pricing({plans}) {
             </span>
             ${basicPrice}
             <span className="ml-1 pt-8 text-2xl leading-8 font-medium text-gray-500 dark:text-gray-400">
-                /{basic_quantity} proxies
+                {/* /{basic_quantity} proxies */}
+                per proxy
             </span>
         </div>
     </div>
@@ -43,6 +49,17 @@ function Pricing({plans}) {
                 </div>
                 <p className="ml-3 text-base leading-6 text-gray-700 dark:text-gray-200">
                     180+ countries available
+                </p>
+            </li>
+            <li className="mt-4 flex items-start">
+                <div className="flex-shrink-0">
+                    <svg className="h-6 w-6 text-green-500" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7">
+                        </path>
+                    </svg>
+                </div>
+                <p className="ml-3 text-base leading-6 text-gray-700 dark:text-gray-200">
+                    99.9% uptime
                 </p>
             </li>
             <li className="mt-4 flex items-start">
@@ -69,16 +86,18 @@ function Pricing({plans}) {
             </li>
         </ul>
         <div className="mt-6 rounded-md shadow">
-            <a href="#" className="flex items-center justify-center px-5 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:shadow-outline transition duration-150 ease-in-out">
+            <Link href="/users/register">
+            <a className="flex items-center justify-center px-5 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:shadow-outline transition duration-150 ease-in-out">
                 Buy Now
             </a>
+            </Link>
         </div>
     </div>
 </div>
 
 
     {/* <!-- Box 2 --> */}
-    <div className="rounded-lg shadow-lg overflow-hidden mb-4 w-full">
+    {/* <div className="rounded-lg shadow-lg overflow-hidden mb-4 w-full">
     <div className="px-6 py-8 bg-white dark:bg-gray-800 sm:p-10 sm:pb-6">
         <div className="flex justify-center">
             <span className="inline-flex px-4 py-1 dark:text-white rounded-full text-sm leading-5 font-semibold tracking-wide uppercase">
@@ -137,10 +156,10 @@ function Pricing({plans}) {
             </a>
         </div>
     </div>
-</div>
+</div> */}
 
     {/* <!-- Box 3 --> */}
-    <div className="rounded-lg shadow-lg overflow-hidden mb-4 w-full">
+    {/* <div className="rounded-lg shadow-lg overflow-hidden mb-4 w-full">
     <div className="px-6 py-8 bg-white dark:bg-gray-800 sm:p-10 sm:pb-6">
         <div className="flex justify-center">
             <span className="inline-flex px-4 py-1 dark:text-white rounded-full text-sm leading-5 font-semibold tracking-wide uppercase">
@@ -200,7 +219,7 @@ function Pricing({plans}) {
             </a>
         </div>
     </div>
-</div>
+</div> */}
 </div>
 
   </div>

@@ -3,15 +3,27 @@ import 'react-toastify/dist/ReactToastify.css'
 import { useState, useEffect, useContext } from 'react'
 import Link from 'next/link'
 import AuthContext from '../../context/AuthContext'
+import ClipLoader from "react-spinners/ClipLoader";
+
 
 
 
 function Register() {
-    const { register, error, setError } = useContext(AuthContext)
+    const { register, error, setError, loading } = useContext(AuthContext)
     const [username, setUsername] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [pwdConfirm, setPwdConfirm] = useState('')
+
+    useEffect(
+      //check for error
+      () => {
+        if(error) {
+          toast.error(error)
+          setError(null)
+        }
+      }, [error]
+    )
 
 
   const  handleSubmit = async (e) => {
@@ -30,11 +42,18 @@ function Register() {
     }
 
     register({username, email, password})
-    if(error) {
-      toast.error(error)
-    }
+  
     
   }
+
+  if(loading) {
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <ClipLoader color={"#123abc"} loading={loading} size={150} />
+      </div>
+    )
+  }
+
   return (
     <div>
        <ToastContainer />
@@ -105,12 +124,12 @@ function Register() {
           <h1
             className="mt-2 text-2xl font-bold text-gray-900 sm:text-3xl md:text-4xl"
           >
-            Welcome to Squid 🦑
+            Welcome to Sockit2Me 🦑
           </h1>
 
           <p className="mt-4 leading-relaxed text-gray-500">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi
-            nam dolorum aliquam, quibusdam aperiam voluptatum.
+          Buy the best Premium Proxies at the lowest rates. 100% Anonymous. 100% Secure. 100% Private.
+
           </p>
         </div>
 

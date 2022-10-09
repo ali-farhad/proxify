@@ -9,11 +9,21 @@ import {useRouter} from 'next/router';
 import Link from 'next/link'
 import AuthContext from "../context/AuthContext";
 
+import ClipLoader from "react-spinners/ClipLoader";
+
+
 
 function DashNav({children}) {
 
-    const {login, error, user, logout} = useContext(AuthContext)
-
+    const {login, error, user, logout, loading,  checkUserLoggedIn} = useContext(AuthContext)
+    
+    useEffect(() => {
+        async function checkUser() {
+            checkUserLoggedIn()
+        }
+        checkUser()
+        }, []); 
+    
 
     const [mobile, setMobile] = useState(false)
     const [nav, setNav] = useState({
@@ -22,7 +32,6 @@ function DashNav({children}) {
         buy: false
     })
     const router = useRouter()
-    console.log(router.pathname)
 
 
     const handleClick = event => {
@@ -50,7 +59,16 @@ function DashNav({children}) {
                 buy: true
             })
         }
-      }, [])
+      }, [router.pathname])
+
+      if(loading) {
+        return (
+          <div className="flex justify-center items-center h-screen">
+            <ClipLoader color={"#123abc"} loading={loading} size={150} />
+          </div>
+        )
+      }
+        
      
   return (
     <div>
@@ -121,8 +139,16 @@ function DashNav({children}) {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
             </button>
-           
+            <div className="px-6 -mx-6  sm:flex md:hidden justify-between items-center">
+        <button className="px-4 py-3 flex items-center space-x-4 rounded-md text-gray-600 group">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+            </svg>
+            <span onClick={() => logout()} className="group-hover:text-gray-700">Logout</span>
+        </button>
+    </div>
         </div>
+
     </div>
 
     <div className="px-6 pt-6 2xl:container">

@@ -84,3 +84,8 @@
   transform: rotate(-45deg) translateY(6px) translateX(-6px);
   background-color: #fff;
 }
+
+
+.has-mask {
+		clip: rect(10px, 150px, 130px, 10px);
+	}

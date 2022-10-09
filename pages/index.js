@@ -1,12 +1,29 @@
+import { useContext } from "react"
+
+
 import Script from 'next/script';
 import Layout from '../components/Layout'
 import Features from './../components/Features';
 import Pricing from './../components/Pricing';
 
+import ClipLoader from "react-spinners/ClipLoader";
+
 
 import { API_URL } from '../config';
+// import AuthContext from "../context/AuthContext";
+
 
 export default function Home({plans}) {
+  // const {loading} = useContext(AuthContext)
+
+  // if(loading) {
+  //   return (
+  //     <div className="flex justify-center items-center h-screen">
+  //       <ClipLoader color={"#123abc"} loading={loading} size={150} />
+  //     </div>
+  //   )
+  // }
+
 
   return (
     <div className="overflow-x-hidden">
@@ -37,12 +54,12 @@ export default function Home({plans}) {
             className="flex items-center justify-center w-full space-x-4 lg:justify-start"
           >
             <a
-              href="#"
+              href="#pricing"
               className="p-4 text-sm font-semibold text-white bg-softBlue rounded shadow-md border-2 border-softBlue md:text-base hover:bg-white hover:text-softBlue"
               >Premium Proxies</a
             >
             <a
-              href="#"
+              href="#pricing"
               className="p-4 text-sm font-semibold text-black bg-gray-300 rounded shadow-md border-2 border-gray-300 md:text-base hover:bg-white hover:text-gray-600"
               >Try Free Proxies</a
             >

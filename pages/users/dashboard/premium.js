@@ -6,13 +6,13 @@ import { API_URL } from './../../../config/index';
 
 
 
-function Dashboard({data}) {
-
+function Dashboard({prox}) {
   
   return (
     <div>
         <DashNav >
-            <TablePre data={data}/>
+          {/* check if prox length is bigger then 1 */}
+          {prox.length > 0 ? <TablePre data={prox}/> : <h1>No Premium Proxies Found</h1>}
         </DashNav>
     </div>
   )
@@ -31,6 +31,6 @@ export async function getServerSideProps({req}) {
   const proxies = await res.json()
 
   return {
-    props: { data: proxies },
+    props: { prox: proxies },
   }
 }

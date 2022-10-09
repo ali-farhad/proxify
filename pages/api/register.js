@@ -23,17 +23,17 @@ export default async  (req, res) => {
 
     if(strapiRes.ok) {
       // Set cookie
-    //   res.setHeader('Set-Cookie', cookie.serialize('token', data.jwt, {
-    //     httpOnly: true,
-    //     secure: process.env.NODE_ENV !== 'development',
-    //     maxAge: 60 * 60 * 24 * 7, // 1 week
-    //     sameSite: 'strict',
-    //     path: '/'
-    //   }))
+      res.setHeader('Set-Cookie', cookie.serialize('token', data.jwt, {
+        httpOnly: true,
+        secure: process.env.NODE_ENV !== 'development',
+        maxAge: 60 * 60 * 24 * 7, // 1 week
+        sameSite: 'strict',
+        path: '/'
+      }))
 
-    //   res.status(200).json({ user: data })
+      res.status(200).json({ user: data, message: 'User registered successfully' })
       // console.log(data.jwt)
-      res.status(200).json({message: "success"})
+      // res.status(200).json({message: "success"})
 
     }
     else {

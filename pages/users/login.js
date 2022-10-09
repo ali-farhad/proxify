@@ -5,17 +5,29 @@ import Link from 'next/link'
 import AuthContext from '../../context/AuthContext'
 import { API_URL, NEXT_URL} from '../../config'
 
+import ClipLoader from "react-spinners/ClipLoader";
+import { parseCookie } from './../../helpers/index';
+
+
 
 
 
 function Login() {
 
-  const {login, error, user, setError} = useContext(AuthContext)
+  const {login, error, setError, loading} = useContext(AuthContext)
 
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
-  // useEffect(() => error && toast.error(error))
+  useEffect(
+    //check for error
+    () => {
+      if(error) {
+        toast.error(error)
+        setError(null)
+      }
+    }, [error]
+  )
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -29,11 +41,16 @@ function Login() {
 
 
     login({email, password})
-    if(error) {
-      toast.error(error)
-    }
-
+  
     
+  }
+
+  if(loading) {
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <ClipLoader color={"#123abc"} loading={loading} size={150} />
+      </div>
+    )
   }
 
     return (
@@ -112,11 +129,11 @@ function Login() {
             </h1>
   
             <p className="mt-4 leading-relaxed text-gray-500">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi
-              nam dolorum aliquam, quibusdam aperiam voluptatum.
+            Buy the best Premium Proxies at the lowest rates. 100% Anonymous. 100% Secure. 100% Private.
             </p>
           </div>
-  
+        
+
           <form onSubmit={handleSubmit}  className="grid grid-cols-6 gap-12 mt-8">
             
   
@@ -182,11 +199,10 @@ function Login() {
   export default Login
 
   export async function getServerSideProps({ req, }) {
+    const {token} = parseCookie(req)
 
-    //get cookie from ctx.req
-    const cookie = req.headers.cookie
     
-      if (cookie) {
+      if (token && token !== 'undefined') {
       return {
         redirect: {
           destination: "/users/dashboard",
